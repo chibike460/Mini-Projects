@@ -64,17 +64,32 @@ const idInvalidCardCompanies = (array) =>{
     const companies = [];
     for (i of array){
         if (i[0] === 3){
-            companies.push('Amex (American Express)')
+            companies.push('Amex (American Express)');
         } else if (i[0] === 4){
-            companies.push('Visa')
+            companies.push('Visa');
         } else if (i[0] === 5){
-            companies.push('Mastercard')
+            companies.push('Mastercard');
         } else if (i[0] === 6){
             companies.push('Discover');
         } else {
-            console.log('Company not found')
+            console.log('Company not found');
         }
     }
      const uniqueCompanies = [...new Set(companies)];
      return uniqueCompanies;
 }
+
+// This should reveal the companies that issued fake cards, from the array of cards held by the batch variable.
+console.log(idInvalidCardCompanies(batch));/* You can check if your card is valid by inserting the digits seperated by comma
+in a square bracket []. replace batch with your digit.
+E.g: console.log(idInvalidCardCompanies([1,2,3,4,5,6,7,8,9,....]));*/
+
+// This should reveal if your credit card is valid. This will return true if card is valid, and false if card is invalid.
+console.log(validateCred(valid1/*[INSERT CARD NUMBERS SEPERATED BY COMMA]*/))/* you can replace everything in the inner 
+parentheis with an array of your card number to check, yourself.*/
+
+/* If you suspect a bunch/batch of credit cards to be invald, run the code below. This will accept an array of cards. It further
+filters these cards and return a new array of only the invalid cards.*/
+console.log(findInvalidCards(batch));/* You can check if your card is valid by inserting the digits seperated by comma
+in a square bracket []. replace batch with your digit.
+E.g: console.log(findInvalidCards([1,2,3,4,5,6,7,8,9,....]));*/
