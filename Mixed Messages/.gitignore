@@ -1,0 +1,3 @@
+# Ignore these files, do not track them.
+*.json
+node_modules/**
