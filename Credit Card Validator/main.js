@@ -65,18 +65,14 @@ const idInvalidCardCompanies = (array) =>{
     for (i of array){
         if (i[0] === 3){
             companies.push('Amex (American Express)');
-            companies.push('Amex (American Express)')
         } else if (i[0] === 4){
             companies.push('Visa');
-            companies.push('Visa')
         } else if (i[0] === 5){
             companies.push('Mastercard');
-            companies.push('Mastercard')
         } else if (i[0] === 6){
             companies.push('Discover');
         } else {
             console.log('Company not found');
-            console.log('Company not found')
         }
     }
      const uniqueCompanies = [...new Set(companies)];
