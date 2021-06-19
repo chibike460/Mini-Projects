@@ -49,21 +49,22 @@ const prompt = require('prompt-sync')({sigint: true});
 /* Function that tells a fan from a regular, prints a welcome or an error message; depending if individual is a fan and returns
 true if the former is the case, or false if the latter is.*/
 const welcome = () =>{
-    let val;
     const name = prompt('What is your name? ');
     console.log(`Hey there ${name}!\n`);
     const harryPotterFan = prompt('Are you a Harry Potter fan? (Y or N) ');
-    if (harryPotterFan.toLowerCase() === 'n'){
-        console.log('Oops! I am sorry, this program is strictly for Harry Potter Movie fans!');
-        val = false;
-    } else if (harryPotterFan.toLowerCase() === 'y'){
-        console.log('\nWelcome! You better not be Slytherin :(\n');
-        val = true;
-    } else{
-        console.log('Invalid Input, Please Restart App!');
-        val = false;
-    }
-    return val;
+    switch (harryPotterFan.toLowerCase()) {
+        case "n":
+          console.log(
+            "Oops! I am sorry, this program is strictly for Harry Potter Movie fans!"
+          );
+          return false;
+        case "y":
+          console.log("\nWelcome! You better not be Slytherin :(\n");
+          return true;
+        default:
+          console.log("Invalid Input, Please Restart App!");
+          return false;
+      }
 }
 
 // Function that generates mixed and somewhat funny messages, suggestions and predictions based on the Harry Potter movie.
